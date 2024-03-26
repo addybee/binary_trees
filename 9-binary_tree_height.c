@@ -5,7 +5,7 @@ size_t height_bt(const binary_tree_t *tree);
 /**
  * binary_tree_height - measures the height of a binary tree
  *
- * @tree:  is a pointer to the root node of the tree to measure the height.
+ * tree:  is a pointer to the root node of the tree to measure the height.
  *
  * Return: the measured height
 */
