@@ -62,7 +62,7 @@ int utility_is_perfect(const binary_tree_t *tree, int depth, int level)
 		if (depth == level + 1)
 			return (1);
 		else
-			return(0);
+			return (0);
 	}
 
 	if (!tree->left || !tree->right)
