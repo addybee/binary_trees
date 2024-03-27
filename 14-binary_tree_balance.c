@@ -10,7 +10,7 @@ int binary_t_height(const binary_tree_t *tree);
      * Return: measured balance factor of a binary tree
      */
 
-    int binary_tree_balance(const binary_tree_t *tree)
+int binary_tree_balance(const binary_tree_t *tree)
 {
 	int factor;
 
