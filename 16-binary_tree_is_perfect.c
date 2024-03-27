@@ -13,6 +13,7 @@ int binary_t_depth(const binary_tree_t *tree);
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int level = 0, depth_tree;
+
 	if (tree == NULL)
 		return (0);
 	/* get the depth of nodes in the tree */
@@ -30,7 +31,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 int binary_t_depth(const binary_tree_t *tree)
 {
 	int depth = 0;
-	
+
 	if (tree == NULL)
 		return (0);
 	while (tree)
@@ -56,8 +57,6 @@ int utility_is_perfect(const binary_tree_t *tree, int depth, int level)
 {
 	if (tree == NULL)
 		return (1);
-	
-	
 	if (!tree->left && !tree->right)
 	{
 		if (depth == level + 1)
