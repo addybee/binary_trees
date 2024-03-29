@@ -14,11 +14,15 @@ binary_tree_t *deQueue(binary_tree_t **queue, int *front);
 
 binary_tree_t **createQueue(int *front, int *rear)
 {
-	binary_tree_t **queue;
-       
-	queue = (binary_tree_t **)malloc(sizeof(binary_tree_t *) * 100);
-	if (!queue)
+	binary_tree_t **queue = NULL;
+	int i;
+	queue = (binary_tree_t **)malloc(sizeof(binary_tree_t *) * 500);
+	if (queue == NULL)
 		return (NULL);
+	for (i = 0; i < 500; i++)
+	{
+		queue[i] = NULL;
+	}
 	*front = *rear = 0;
 	return (queue);
 }
