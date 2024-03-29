@@ -1,4 +1,7 @@
 #include "binary_trees.h"
+binary_tree_t **createQueue(int *front, int *rear);
+void enQueue(binary_tree_t **queue, int *rear, binary_tree_t *temp_node);
+binary_tree_t *deQueue(binary_tree_t **queue, int *front);
 
 /**
  * createQueue - creates a queue of size 100
@@ -11,9 +14,9 @@
 
 binary_tree_t **createQueue(int *front, int *rear)
 {
-	binary_tree_t **queue =
-		(binary_tree_t **)malloc(sizeof(binary_tree_t *) * 100);
-
+	binary_tree_t **queue;
+       
+	queue = (binary_tree_t **)malloc(sizeof(binary_tree_t *) * 100);
 	if (!queue)
 		return (NULL);
 	*front = *rear = 0;
@@ -59,7 +62,7 @@ binary_tree_t *deQueue(binary_tree_t **queue, int *front)
 
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-	int rear, front;
+	int rear = 0, front = 0;
 	binary_tree_t **queue;
 	binary_tree_t *temp_node;
 
