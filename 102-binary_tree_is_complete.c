@@ -17,10 +17,10 @@ binary_tree_t **createQueue(int *front, int *rear)
 	binary_tree_t **queue = NULL;
 	int i;
 
-	queue = (binary_tree_t **)malloc(sizeof(binary_tree_t *) * 500);
+	queue = (binary_tree_t **)malloc(sizeof(binary_tree_t *) * 300);
 	if (queue == NULL)
 		return (NULL);
-	for (i = 0; i < 500; i++)
+	for (i = 0; i < 300; i++)
 	{
 		queue[i] = NULL;
 	}
@@ -86,8 +86,10 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		if (temp_node->left)
 		{
 			if (is_not_full_node)
+			{
+				free(queue);
 				return (0);
-
+			}
 			enQueue(queue, &rear, temp_node->left);
 		}
 		else
@@ -96,7 +98,10 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		if (temp_node->right)
 		{
 			if (is_not_full_node)
+			{
+				free(queue);
 				return (0);
+			}
 			enQueue(queue, &rear, temp_node->right);
 		}
 		else
